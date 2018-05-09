@@ -1,0 +1,7 @@
+Production:
+- Dataset: https://cms-pdmv.cern.ch/mcm/requests?page=0&dataset_name=ZH_HToInvisible_ZToQQ_M110_13TeV_powheg_pythia8
+- Chained request: https://cms-pdmv.cern.ch/mcm/chained_requests?dataset_name=ZH_HToInvisible_ZToQQ_M110_13TeV_powheg_pythia8&page=0&shown=15
+- Gridpack: /cvmfs/cms.cern.ch/phys_generator/gridpacks/slc6_amd64_gcc481/13TeV/powheg/V2/HZJ_HanythingJ_NNPDF30_13TeV_M110_Vhadronic_HZJ/v1/HZJ_HanythingJ_NNPDF30_13TeV_M110_Vhadronic_HZJ.tgz
+
+Another potential gridpack (from LS-ing around on cvmfs):
+ - /cvmfs/cms.cern.ch/phys_generator/gridpacks/slc6_amd64_gcc481/13TeV/powheg/V2/HZJ_HanythingJ_NNPDF30_13TeV_M125_Vhadronic/v2/HZJ_HanythingJ_NNPDF30_13TeV_M125_Vhadronic.tgz
