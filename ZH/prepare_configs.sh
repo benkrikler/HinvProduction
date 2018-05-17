@@ -87,7 +87,7 @@ setup_cmssw slc6_amd64_gcc630 CMSSW_9_4_4
 cmsDriver.py step1 --filein "file:$FILE_IN"\
            --fileout file:$FILE_OUT\
            --mc --eventcontent NANOAODSIM --datatier NANOAODSIM\
-           --conditions 94X_mcRun2_asymptotic_v2 --step NANO --nThreads 2 --era Run2_2016,run2_miniAOD_80XLegacy\
+           --conditions 94X_mcRun2_asymptotic_v2 --step NANO --nThreads 4 --era Run2_2016,run2_miniAOD_80XLegacy\
            --python_filename driver_cfg_nanoaod.py --no_exec\
            --customise Configuration/DataProcessing/Utils.addMonitoring -n -1 || exit $? ; 
 }
