@@ -5,3 +5,14 @@ Production:
 
 Another potential gridpack (from LS-ing around on cvmfs):
  - /cvmfs/cms.cern.ch/phys_generator/gridpacks/slc6_amd64_gcc481/13TeV/powheg/V2/HZJ_HanythingJ_NNPDF30_13TeV_M125_Vhadronic/v2/HZJ_HanythingJ_NNPDF30_13TeV_M125_Vhadronic.tgz
+
+All available NanoAOD samples for Hinv:
+ - https://cms-pdmv.cern.ch/mcm/requests?page=0&dataset_name=*H_HToInv*M125*&prepid=*Nano*
+
+Gridpacks:
+ - Higgs-EXO M_Higgs = 110 GeV:
+   /cvmfs/cms.cern.ch/phys_generator/gridpacks/slc6_amd64_gcc481/13TeV/powheg/V2/HZJ_HanythingJ_NNPDF30_13TeV_M110_Vhadronic_HZJ/v1/HZJ_HanythingJ_NNPDF30_13TeV_M110_Vhadronic_HZJ.tgz
+ - Higgs-EXO M_Higgs = 150 GeV:
+   /cvmfs/cms.cern.ch/phys_generator/gridpacks/slc6_amd64_gcc481/13TeV/powheg/V2/HZJ_HanythingJ_NNPDF30_13TeV_M150_Vhadronic_HZJ/v1/HZJ_HanythingJ_NNPDF30_13TeV_M150_Vhadronic_HZJ.tgz
+ - Higgs-EXO M_Higgs = 125 GeV:
+   /cvmfs/cms.cern.ch/phys_generator/gridpacks/slc6_amd64_gcc481/13TeV/powheg/V2/HZJ_HanythingJ_NNPDF30_13TeV_M125_Vhadronic/v2/HZJ_HanythingJ_NNPDF30_13TeV_M125_Vhadronic.tgz
