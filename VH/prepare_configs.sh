@@ -115,8 +115,8 @@ cmsDriver.py step1 --filein "file:$FILE_IN"\
 next_file_out lhe
 ( config_lhe )
 next_file_out premix
-# ( config_premix )
+( config_premix )
 next_file_out miniaod
-# ( config_miniaod )
+( config_miniaod )
 next_file_out nanoaod
-# ( config_nanoaod )
+( config_nanoaod )
