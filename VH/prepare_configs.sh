@@ -76,14 +76,14 @@ cmsDriver.py step1 --filein "file:$FILE_IN"\
            --pileup_input "dbs:/Neutrino_E-10_gun/RunIISpring15PrePremix-PUMoriond17_80X_mcRun2_asymptotic_2016_TrancheIV_v2-v2/GEN-SIM-DIGI-RAW"\
            --mc --eventcontent PREMIXRAW --datatier GEN-SIM-RAW --conditions 80X_mcRun2_asymptotic_2016_TrancheIV_v6\
            --step DIGIPREMIX_S2,DATAMIX,L1,DIGI2RAW,HLT:@frozen2016 --nThreads 4 --datamix PreMix\
-           --era Run2_2016 --python_filename driver_cfg_premix_step1.py\
+           --era Run2_2016 --python_filename driver_cfg_PilupMix.py\
            --no_exec --customise Configuration/DataProcessing/Utils.addMonitoring -n -1 || exit $? ; 
 
 cmsDriver.py step2 --filein file:output_premix_interm.root\
            --fileout file:$FILE_OUT\
            --mc --eventcontent AODSIM --runUnscheduled --datatier AODSIM\
            --conditions 80X_mcRun2_asymptotic_2016_TrancheIV_v6 --step RAW2DIGI,RECO,EI\
-           --nThreads 4 --era Run2_2016 --python_filename driver_cfg_premix_step2.py\
+           --nThreads 1 --era Run2_2016 --python_filename driver_cfg_AOD.py\
            --no_exec --customise Configuration/DataProcessing/Utils.addMonitoring -n -1 || exit $? ; 
 }
 
@@ -95,7 +95,7 @@ setup_cmssw slc6_amd64_gcc530 CMSSW_8_0_21
 cmsDriver.py step1 --filein "file:$FILE_IN" --fileout file:$FILE_OUT\
            --mc --eventcontent MINIAODSIM --runUnscheduled --datatier MINIAODSIM\
            --conditions 80X_mcRun2_asymptotic_2016_TrancheIV_v6 --step PAT --nThreads 4 --era Run2_2016\
-           --python_filename driver_cfg_miniaod.py\
+           --python_filename driver_cfg_MiniAOD.py\
            --no_exec --customise Configuration/DataProcessing/Utils.addMonitoring -n -1 || exit $? ; 
 }
 
@@ -108,7 +108,7 @@ cmsDriver.py step1 --filein "file:$FILE_IN"\
            --fileout file:$FILE_OUT\
            --mc --eventcontent NANOAODSIM --datatier NANOAODSIM\
            --conditions 94X_mcRun2_asymptotic_v2 --step NANO --nThreads 4 --era Run2_2016,run2_miniAOD_80XLegacy\
-           --python_filename driver_cfg_nanoaod.py --no_exec\
+           --python_filename driver_cfg_NanoAOD.py --no_exec\
            --customise Configuration/DataProcessing/Utils.addMonitoring -n -1 || exit $? ; 
 }
 
