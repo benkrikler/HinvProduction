@@ -16,6 +16,7 @@ def process_args():
     parser.add_argument("-b", "--build-dir", help="What is the 'build' directory to use.  Defaults to 'build_{prod-mode}' if not given.", default=None)
     parser.add_argument("-s", "--stage", help="Which stage in the data processing to run")
     parser.add_argument("-r", "--replacements", action="append", help="Add a list of variables to replace in the input config file.  Must take form: 'KEY=Value'", default=[])
+    parser.add_argument("-k", "--kernel-ext", default=None, help="Additional sequence to include in the job name kernel")
     args = parser.parse_args()
     if not args.build_dir:
         args.build_dir = "build_" + args.prod_mode
@@ -27,13 +28,15 @@ def process_args():
 def setup(build_dir, crab_dir):
     os.makedirs(build_dir, exist_ok=True)
     if not os.path.isdir(crab_dir):
-        os.path.mkdir(crab_dir)
+        os.mkdir(crab_dir)
 
 
-def make_config(stage, crab_dir, prod_mode, build_dir, replacements):
+def make_config(stage, crab_dir, prod_mode, build_dir, replacements, kernel_ext):
     repls = dict(Kernel = prod_mode + "_Vhadronic_Hinv_M125",
                  Driver = os.path.join(build_dir, "driver_cfg_{stage}.py").format(stage=stage)
                 )
+    if kernel_ext:
+	    repls["Kernel"] = repls["Kernel"] + "_" + kernel_ext
     for repl in replacements:
         key, value = repl.split("=")
         repls[key] = value

@@ -9,7 +9,7 @@ if [ -z "$ProdMode" ] ; then
 elif [ "${ProdMode^^}" == WPLUSH ];then
     GridPack=/cvmfs/cms.cern.ch/phys_generator/gridpacks/slc6_amd64_gcc481/13TeV/powheg/V2/HWplusJ_HanythingJ_NNPDF30_13TeV_M125_Vhadronic/v2/HWplusJ_HanythingJ_NNPDF30_13TeV_M125_Vhadronic.tgz
 elif [ "${ProdMode^^}" == WMINUSH ];then
-    GridPack=/cvmfs/cms.cern.ch/phys_generator/gridpacks/slc6_amd64_gcc481/13TeV/powheg/V2/HWminusJ_HanythingJ_NNPDF30_13TeV_M125_Vhadronic/v2/HWminusJ_HanythingJ_NNPDF30_13TeV_M125_Vhadronic.tgz
+    GridPack=/cvmfs/cms.cern.ch/phys_generator/gridpacks/slc6_amd64_gcc481/13TeV/powheg/V2/HWminusJ_HanythingJ_NNPDF30_13TeV_M125_Vhadronic/v1/HWminusJ_HanythingJ_NNPDF30_13TeV_M125_Vhadronic.tgz
 elif [ "${ProdMode^^}" == ZH ];then
     GridPack=/cvmfs/cms.cern.ch/phys_generator/gridpacks/slc6_amd64_gcc481/13TeV/powheg/V2/HZJ_HanythingJ_NNPDF30_13TeV_M125_Vhadronic/v2/HZJ_HanythingJ_NNPDF30_13TeV_M125_Vhadronic.tgz
 else
@@ -75,7 +75,7 @@ cmsDriver.py step1 --filein "file:$FILE_IN"\
            --fileout file:output_premix_interm.root\
            --pileup_input "dbs:/Neutrino_E-10_gun/RunIISpring15PrePremix-PUMoriond17_80X_mcRun2_asymptotic_2016_TrancheIV_v2-v2/GEN-SIM-DIGI-RAW"\
            --mc --eventcontent PREMIXRAW --datatier GEN-SIM-RAW --conditions 80X_mcRun2_asymptotic_2016_TrancheIV_v6\
-           --step DIGIPREMIX_S2,DATAMIX,L1,DIGI2RAW,HLT:@frozen2016 --nThreads 4 --datamix PreMix\
+           --step DIGIPREMIX_S2,DATAMIX,L1,DIGI2RAW,HLT:@frozen2016 --nThreads 1 --datamix PreMix\
            --era Run2_2016 --python_filename driver_cfg_PilupMix.py\
            --no_exec --customise Configuration/DataProcessing/Utils.addMonitoring -n -1 || exit $? ; 
 
